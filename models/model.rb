@@ -1,11 +1,39 @@
 require 'json'
 require 'open-uri'
 
-def find_market(zip_code)
+class String
+  def numeric?
+    Float(self) != nil rescue false
+  end
+end
+
+def market_list(answer)
     fm = JSON.parse(open("https://data.ny.gov/api/views/xjya-f8ng/rows.json?accessType=DOWNLOAD"){ |x| x.read })
+    if answer.numeric?
+      return find_market(answer, fm)
+    else
+      return find_market_location(answer, fm)
+    end
+end
+
+def find_market(zip_code, data)
     fm_arr = []
-    fm['data'].each do |market|
+    data['data'].each do |market|
         if market[14] == zip_code.to_s
+            fm_arr.push(market)
+        end
+    end
+    if fm_arr.length == 0
+        fm_arr.push(nil)
+        fm_arr.push("There are no farmers markets in your area. We are working to expand the amount of farmers markets in New York.")
+    end
+    return fm_arr
+end
+
+def find_market_location(location,data)
+    fm_arr = []
+    data['data'].each do |market|
+        if market[12] == location.to_s.capitalize
             fm_arr.push(market)
         end
     end
@@ -34,24 +62,14 @@ class Farmers_market
         @website = market[17][0]
         @time = market[18]
         @days_open = market[19]
-        @snap = market[24]
+        if market[24] == 'N'
+            @snap = 'No'
+        else
+            @snap = 'Yes'
+        end
         
         @@all << self
     end
     
     attr_accessor :name, :address, :city, :state, :zipcode, :contact_name, :contact_number, :website, :time, :days_open, :snap
 end
-
-# fm = JSON.parse(open("https://data.ny.gov/api/views/xjya-f8ng/rows.json?accessType=DOWNLOAD"){ |x| x.read })
-
-# fm['data'].each do |market|
-#     puts market[24]
-# end
-
-# find_market(11209).each do |store|
-#     Farmers_market.new(store)
-# end
-
-# Farmers_market.all.each do |market|
-#     puts market.zipcode
-# end

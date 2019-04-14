@@ -12,9 +12,9 @@ class ApplicationController < Sinatra::Base
   
   post '/result' do
     # puts params
-    @zip_code = params[:zip_code]
-    if find_market(@zip_code)[0] != nil
-      find_market(@zip_code).each do |market|
+    @answer = params[:answer]
+    if market_list(@answer)[0] != nil
+      market_list(@answer).each do |market|
         Farmers_market.new(market)
       end
     end

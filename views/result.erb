@@ -19,14 +19,17 @@
   <body>
     
     <div class="container-fluid">
-      <%if find_market(@zip_code)[0] != nil%>
+      <%if market_list(@answer)[0] != nil%>
         <% Farmers_market.all.each do |market|%>
           <h2><%= market.name %></h2>
           <p><%= market.address + ' ' + market.city + ', ' + market.state + ' ' + market.zipcode %></p>
-          <p><%= market.website %></p>
+          <p><a href=<%= market.website %>><%= market.website %></a></p>
+          <p><%= market.time %></p>
+          <p><%= market.days_open %></p>
+          <p>Accepts SNAP: <%= market.snap %></p>
         <%end%>
       <%else%>
-        <p><%=find_market(@zip_code)[1]%></p>
+        <p><%=market_list(@answer)[1]%></p>
       <%end%>
     </div>
   </body>
