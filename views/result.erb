@@ -19,18 +19,28 @@
   <body>
     
     <div class="container-fluid">
-      <%if market_list(@answer)[0] != nil%>
-        <% Farmers_market.all.each do |market|%>
-          <h2><%= market.name %></h2>
-          <p><%= market.address + ' ' + market.city + ', ' + market.state + ' ' + market.zipcode %></p>
-          <p><a href=<%= market.website %>><%= market.website %></a></p>
-          <p><%= market.time %></p>
-          <p><%= market.days_open %></p>
-          <p>Accepts SNAP: <%= market.snap %></p>
+      <div>
+        <form action="/">
+          <input id='homebutton' type="submit" value="Home" />
+        </form>
+        <%if market_list(@answer)[0] != nil%>
+          <h1 id='rtitle'>Farmers Markets</h1>
+          <% Farmers_market.all.each do |market|%>
+            <div class='fm col-sm-6'>
+              <div class='insidefm'>
+                <h2><%= market.name %></h2>
+                <p><%= market.address + ' ' + market.city + ', ' + market.state + ' ' + market.zipcode %></p>
+                <p><a href=<%= market.website %>><%= market.website %></a></p>
+                <p><%= market.time %></p>
+                <p><%= market.days_open %></p>
+                <p>Accepts SNAP: <%= market.snap %></p>
+              </div>
+            </div>
+          <%end%>
+        <%else%>
+          <p id='sorry'><%=market_list(@answer)[1]%></p>
         <%end%>
-      <%else%>
-        <p><%=market_list(@answer)[1]%></p>
-      <%end%>
+      </div>
     </div>
   </body>
 </html>

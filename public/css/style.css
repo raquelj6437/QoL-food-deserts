@@ -1,3 +1,128 @@
-.header{
+@import url('https://fonts.googleapis.com/css?family=Dokdo|Montserrat');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+body{
+    background-color: #ffe6b3;
+    font-family: 'PT Sans', sans-serif;
+}
+
+#header{
     text-align: center;
+    height: 500px;
+    background-image: url("../images/farmersmarket.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    bottom: 20px;
+    color: white;
+}
+
+#title, #subtitle{
+    position: relative;
+    top: 170px;
+}
+
+#title{
+    font-size: 100px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#subtitle{
+    font-size: 60px;
+    font-family: 'Dokdo', cursive;
+}
+
+h2{
+    text-align: center;
+}
+
+/*#fdexplination, #fdsolution, #whatsSNAP, #find_fm, #sources{*/
+/*    height: 400px;*/
+/*}*/
+
+#fdsolution, #find_fm{
+    background-color: white;
+}
+
+#fdexplination, #whatsSNAP, #sources{
+    background-color: #ffe6b3
+}
+
+@media (max-width: 768px) {
+    #header{
+        height: 700px;
+    }
+    
+    #title, #subtitle{
+        position: relative;
+        top: 130px;
+    }
+    
+    /*#fdexplination, #fdsolution, #whatsSNAP, #find_fm, #sources{*/
+    /*    height: 500px;*/
+    /*}*/
+}
+
+.container-fluid{
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+#find_fm{
+    height: 300px;
+    text-align: center;
+}
+
+form{
+    position: relative;
+    top: 30px;
+}
+
+#infobox{
+    height: 30px;
+    width: 300px;
+}
+
+#submitbutton{
+    position: relative;
+    top: 20px;
+    height: 50px;
+    width: 300px;
+    font-size: 20px;
+    background-color: rgb(75, 182, 255);
+    border: none;
+}
+
+p, li, a{
+    font-size: 20px;
+}
+
+.fm{
+    background-color:rgb(255, 186, 0);
+    padding-left: 50px;
+    padding-right: 50px;
+    height: 350px;
+}
+
+.insidefm{
+    position: relative;
+    top: 20px;
+}
+
+#rtitle{
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 70px
+}
+
+#sorry{
+    font-size: 70px;
+}
+
+#homebutton{
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    background-color: rgb(75, 182, 255);
+    border-color: black;
 }
