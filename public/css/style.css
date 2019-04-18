@@ -40,11 +40,11 @@ h2{
 /*    height: 400px;*/
 /*}*/
 
-#fdsolution, #find_fm{
+#fdsolution, #find_fm, #contact{
     background-color: white;
 }
 
-#fdexplination, #whatsSNAP, #sources{
+#fdexplination, #whatsSNAP, #fdmission, #sources{
     background-color: #ffe6b3
 }
 
@@ -55,9 +55,18 @@ h2{
     
     #title, #subtitle{
         position: relative;
-        top: 130px;
+        top: 230px;
     }
     
+    #title{
+    font-size: 70px;
+    font-family: 'Montserrat', sans-serif;
+    }
+    
+    #subtitle{
+        font-size: 30px;
+        font-family: 'Dokdo', cursive;
+    }
     /*#fdexplination, #fdsolution, #whatsSNAP, #find_fm, #sources{*/
     /*    height: 500px;*/
     /*}*/
@@ -125,4 +134,8 @@ p, li, a{
     height: 40px;
     background-color: rgb(75, 182, 255);
     border-color: black;
+}
+
+h3{
+    text-align: center;
 }
