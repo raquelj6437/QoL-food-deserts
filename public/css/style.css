@@ -17,6 +17,37 @@ body{
     color: white;
 }
 
+#ptimg{
+    background-image: url("../images/data-images/pivot-table.png");
+    height: 550px;
+}
+
+#ff-ptimg{
+    background-image: url("../images/data-images/ff-pivot-table-graph.png");
+    height: 500px;
+}
+
+#fm-ptimg{
+    background-image: url("../images/data-images/fm-pivot-table-graph.png");
+}
+
+#fm-graph{
+    background-image: url("../images/data-images/fm-graph.png");
+}
+
+#gm-graph{
+    background-image: url("../images/data-images/gm-graph.png");
+}
+
+#ptimg, #ff-ptimg, #fm-ptimg, #fm-graph, #gm-graph{
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+#fm-ptimg, #fm-graph, #gm-graph{
+    height: 400px;
+}
+
 #title, #subtitle{
     position: relative;
     top: 170px;
