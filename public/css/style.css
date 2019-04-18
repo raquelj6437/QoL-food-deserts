@@ -177,3 +177,24 @@ p, li, a{
 h3, h1{
     text-align: center;
 }
+
+#contact{
+    height: 400px;
+}
+
+#contactinfo{
+    border-style: solid;
+    border-color: black;
+    height: 200px;
+    width: 800px;
+    text-align: center;
+    position: relative;
+    left: 20%;
+    top: 10%;
+}
+
+#contactinfo h4{
+    position: relative;
+    top: 30%;
+    font-size: 20px;
+}
