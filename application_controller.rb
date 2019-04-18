@@ -20,4 +20,8 @@ class ApplicationController < Sinatra::Base
     end
     erb :result
   end
+  
+  post '/data' do
+    erb :data
+  end
 end

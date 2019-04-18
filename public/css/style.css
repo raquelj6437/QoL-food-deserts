@@ -128,14 +128,21 @@ p, li, a{
     font-size: 70px;
 }
 
-#homebutton{
-    position: absolute;
-    width: 100px;
+#homebutton, #databutton{
     height: 40px;
     background-color: rgb(75, 182, 255);
     border-color: black;
 }
 
-h3{
+#databutton{
+    width: 300px;
+}
+
+#homebutton{
+    width: 100px;
+    position: absolute;
+}
+
+h3, h1{
     text-align: center;
 }
